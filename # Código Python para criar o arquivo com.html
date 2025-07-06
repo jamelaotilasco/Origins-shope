@@ -1,0 +1,356 @@
+# Código Python para criar o arquivo com as substituições
+html_original = """<!DOCTYPE html><html lang="pt-BR"><head>
+  <style>
+    :root {
+      --primary: 197 51 255;
+      --primary-foreground: 255 255 255;
+
+      --secondary: 255 255 255 / 0.05;
+
+      --background: 9 9 11;
+      --foreground: 250 250 250;
+
+      --border: 255 255 255 / 0.05;
+      --card: var(--background);
+
+      --muted: var(--secondary);
+      --muted-foreground: 171 171 171;
+
+      --radius: 0.7rem;
+    }
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Início">
+  <meta property="og:site_name" content="Legas Store">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="https://cdn.mginex.com/storage/e79ff215-ebd9-40e6-bccf-ebbd99c7e4b5.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
+  <meta name="description" content="">
+
+  <link rel="icon" type="image/x-icon" href="e79ff215-ebd9-40e6-bccf-ebbd99c7e4b5.png">
+  <link rel="stylesheet" href="main.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="css2" rel="stylesheet">
+
+  <!-- GOOGLE_TAG_MANAGER -->
+
+  
+
+  <!-- FACEBOOK_PIXEL -->
+  
+
+  <!-- CRISP -->
+  
+
+
+
+  <title>
+    Início - Origins shope
+  </title>
+  <script src=""></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          typography: {
+            DEFAULT: {
+              css: {
+                color: "rgb(var(--foreground))",
+                "--tw-prose-body": "rgb(var(--foreground))",
+                "--tw-prose-headings": "rgb(var(--foreground))",
+                "--tw-prose-lead": "rgb(var(--muted-foreground))",
+                "--tw-prose-links": "rgb(var(--primary))",
+                "--tw-prose-bold": "rgb(var(--foreground))",
+                "--tw-prose-counters": "rgb(var(--muted-foreground))",
+                "--tw-prose-bullets": "rgb(var(--muted-foreground))",
+                "--tw-prose-hr": "rgb(var(--border))",
+                "--tw-prose-quotes": "rgb(var(--foreground))",
+                "--tw-prose-quote-borders": "rgb(var(--border))",
+                "--tw-prose-captions": "rgb(var(--muted-foreground))",
+                "--tw-prose-code": "rgb(var(--foreground))",
+                "--tw-prose-pre-code": "rgb(var(--muted-foreground))",
+                "--tw-prose-pre-bg": "rgb(var(--muted))",
+                "--tw-prose-th-borders": "rgb(var(--border))",
+                "--tw-prose-td-borders": "rgb(var(--border))",
+              },
+            },
+          },
+          colors: {
+            primary: "rgb(var(--primary))",
+            "primary-foreground": "rgb(var(--primary-foreground))",
+            secondary: "rgb(var(--secondary))",
+            background: "rgb(var(--background))",
+            card: "rgb(var(--card))",
+            foreground: "rgb(var(--foreground))",
+            border: "rgb(var(--border))",
+            muted: "rgb(var(--muted))",
+            "muted-foreground": "rgb(var(--muted-foreground))",
+          },
+          borderRadius: {
+            xl: "calc(var(--radius) + 2px)",
+            lg: "var(--radius)",
+            md: "calc(var(--radius) - 2px)",
+            sm: "calc(var(--radius) - 4px)",
+            full: "500px",
+          },
+        },
+        container: {
+          center: true,
+          padding: "1rem",
+          screens: {
+            "2xl": "1500px",
+          },
+        },
+      },
+    };
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+  * {
+  @apply border-border p-0 m-0 box-border border-border;
+  }
+
+  body {
+  font-family: 'Geist', sans-serif;
+  @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+  @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-md;
+  }
+  }
+  </style>
+</head>
+
+<body>
+  <header class="sticky top-0 backdrop-blur-md z-20 py-6 border-b bg-background/30">
+  <div class="container">
+    <nav class="flex items-center justify-between">
+      <a href="" class="flex items-center gap-2">
+        <img src="e79ff215-ebd9-40e6-bccf-ebbd99c7e4b5.png" class="w-11 h-11 rounded-md object-cover" alt="">
+        <div class="flex items-center gap-1 font-semibold tracking-tighter overflow-hidden">
+          <span class="line-clamp-1">Origins shope</span>
+          <div class="flex items-center justify-center relative">
+            <i data-lucide="badge" class="fill-blue-500 text-blue-500 size-5"></i>
+            <i data-lucide="check" class="absolute size-3.5 text-white"></i>
+          </div>
+        </div>
+      </a>
+      <div class="relative hidden lg:block" id="search-popover">
+        <div class="relative flex items-center w-[430px]">
+          <input placeholder="Procure pelo nome do produto" class="flex w-full border-2 border-input bg-transparent px-3 py-1 text-sm shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:border-primary disabled:cursor-not-allowed disabled:opacity-50 pl-12 h-11 rounded-full" id="search">
+          <i data-lucide="search" class="absolute left-4 size-5 text-muted-foreground"></i>
+        </div>
+        <div class="absolute bg-background backdrop-blur-md w-full rounded-md top-20 border overflow-hidden z-50 max-h-96 overflow-y-auto hidden" id="search-items"></div>
+      </div>
+      <ul class="flex items-center gap-3">
+        <li>
+          <button id="cart-button" onclick="openCart()" type="button" target="_blank" class="relative inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md font-semibold transition-[background-color,color,transform,border-color] duration-150 ease-out-quad focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-white/10 hover:border-transparent hover:bg-white/10 hover:text-secondary-foreground h-10 px-5 text-[0.9rem] active:scale-[0.975] relative">
+            <i data-lucide="shopping-cart" class="mr-2 size-5"></i>
+            Carrinho
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+  <div class="absolute inset-0 z-[-10] overflow-hidden">
+  <div class="size-[30rem] rounded-full bg-gradient-to-bl from-primary/15 blur-3xl absolute -top-1/3"></div>
+  <div class="hidden sm:block size-[45rem] rounded-full bg-gradient-to-bl from-primary/30 blur-3xl absolute -top-1/3 -right-1/2 sm:right-20"></div>
+  <div class="opacity-15 h-full w-full bg-[linear-gradient(to_right,rgb(var(--primary))_1px,transparent_1px),linear-gradient(to_bottom,rgb(var(--primary))_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_40%_55%_at_50%_0%,#000_30%,transparent_110%)]">
+    <i data-lucide="badge"></i>
+  </div>
+</div>
+  <div id="cart-drawer" class="w-screen h-screen flex items-center justify-end z-50 fixed top-0 left-0 group hidden" data-state="closed">
+  <div class="bg-background border-l h-full w-full lg:w-[500px] p-5 flex flex-col">
+    <div class="flex items-center justify-between mb-4">
+      <h4 class="text-xl font-semibold tracking-tight">Carrinho</h4>
+      <button onclick="closeCart()">
+        <i data-lucide="x" class="text-muted-foreground hover:text-foreground transition-colors"></i>
+      </button>
+    </div>
+    <div class="space-y-3 h-full flex flex-col" id="products-list"></div>
+    <div class="mt-auto">
+      <div class="bg-secondary w-full flex p-3 rounded-sm flex justify-between font-semibold mb-3" id="cart-pricing">
+        <div>Valor Total:</div>
+        <span>R$0,00</span>
+      </div>
+      <a href="checkout" class="inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-5 py-2 w-full">
+        <i data-lucide="external-link" class="size-5"></i>
+        Ir para a compra
+      </a>
+    </div>
+  </div>
+</div>
+  <main id="__mginex">
+
+<div class="space-y-12 py-12">
+  <section>
+    <div class="container py-24 flex items-center justify-center">
+      <div class="flex flex-col items-start sm:items-center justify-center sm:text-center">
+        <div class="inline-flex items-center gap-2 bg-primary/10 border border-primary/20 rounded-full px-4 py-2 mb-3">
+          <div class="flex items-center justify-center relative">
+            <div class="w-2 h-2 bg-primary rounded-full "></div>
+            <div class="w-2 h-2 bg-primary rounded-full animate-ping absolute"></div>
+          </div>
+          <span class="text-sm font-medium text-primary">Estamos online</span>
+        </div>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl lg:max-w-2xl font-bold mb-3">
+          A <span class="text-primary">Melhor Loja</span> de Produtos Digitais
+        </h1>
+        <p class="text-muted-foreground lg:text-lg lg:max-w-lg leading-relaxed">
+          A <strong>
+            Origins shope
+          </strong> é reconhecida como a líder do mercado, oferecendo uma seleção imbatível de
+          produtos digitais com os <span class="text-primary">melhores preços e qualidade excepcionais</span>.
+        </p>
+        <div class="flex flex-row gap-3 mt-3">
+          <a class="group inline-flex items-center gap-2 justify-center whitespace-nowrap rounded-md font-semibold transition-[background-color,color,transform,border-color] duration-150 ease-out-quad focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/80 h-12 px-6 active:scale-[0.975]" type="button" href="">
+            Ver produtos
+            <i data-lucide="arrow-right" class="size-5 group-hover:translate-x-1 transition-transform"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="container">
+      <h4 class="mb-8">
+        <span class="bg-primary/20 border-2 border-primary px-4 py-3 rounded-md text-sm md:text-[1.1rem] font-semibold">Categorias
+          Populares</span>
+      </h4>
+      <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-4 lg:grid-cols-7 gap-3">
+         <div style="opacity: 1; transform: none">
+    <a class="bg-secondary rounded-md aspect-[180/250] flex items-end justify-center py-8 px-2 relative before:content-[''] overflow-hidden cursor-pointer border-2 hover:border-primary hover:scale-[97%] transition-all" href="destaque">
+        
+        <img src="0605858f-c163-42d1-ba8c-530ebe3c3c51.png" class="absolute top-0 left-0 w-full h-full select-none object-cover" style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent 100%)">
+        
+        <span class="text-sm sm:text-lg font-semibold z-10 text-center uppercase">DESTAQUE</span>
+    </a>
+</div>
+
+         <div style="opacity: 1; transform: none">
+    <a class="bg-secondary rounded-md aspect-[180/250] flex items-end justify-center py-8 px-2 relative before:content-[''] overflow-hidden cursor-pointer border-2 hover:border-primary hover:scale-[97%] transition-all" href="assinaturas">
+        
+        <img src="04e68c81-f917-4fac-a96b-2bf6b209e730.png" class="absolute top-0 left-0 w-full h-full select-none object-cover" style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent 100%)">
+        
+        <span class="text-sm sm:text-lg font-semibold z-10 text-center uppercase">Assinaturas</span>
+    </a>
+</div>
+
+         <div style="opacity: 1; transform: none">
+    <a class="bg-secondary rounded-md aspect-[180/250] flex items-end justify-center py-8 px-2 relative before:content-[''] overflow-hidden cursor-pointer border-2 hover:border-primary hover:scale-[97%] transition-all" href="outros">
+        
+        <img src="b0cdf56f-3c8c-45fa-9985-14bd84854061.png" class="absolute top-0 left-0 w-full h-full select-none object-cover" style="mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, transparent 100%)">
+        
+        <span class="text-sm sm:text-lg font-semibold z-10 text-center uppercase">Outros</span>
+    </a>
+</div>
+
+        
+      </div>
+    </div>
+  </section>
+  
+  <div id="products">
+    <section id="category-section" class="min-h-[300px]" data-category-id="01975fa0-714f-7182-9b56-4f5b3635e3ad">
+      <div class="container">
+        <h4 class="mb-8">
+          <span class="bg-primary/20 border-2 border-primary px-4 py-3 rounded-md text-sm md:text-[1.1rem] font-semibold">
+            DESTAQUE
+          </span>
+        </h4>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4" id="products-list"></div>
+      </div>
+    </section>
+  </div>
+  
+  <div id="products">
+    <section id="category-section" class="min-h-[300px]" data-category-id="01978019-a387-7747-9642-a177149ea8e2">
+      <div class="container">
+        <h4 class="mb-8">
+          <span class="bg-primary/20 border-2 border-primary px-4 py-3 rounded-md text-sm md:text-[1.1rem] font-semibold">
+            Assinaturas
+          </span>
+        </h4>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4" id="products-list"></div>
+      </div>
+    </section>
+  </div>
+  
+  <div id="products">
+    <section id="category-section" class="min-h-[300px]" data-category-id="0197a440-3435-7c9a-b452-e5935cd453d7">
+      <div class="container">
+        <h4 class="mb-8">
+          <span class="bg-primary/20 border-2 border-primary px-4 py-3 rounded-md text-sm md:text-[1.1rem] font-semibold">
+            Outros
+          </span>
+        </h4>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4" id="products-list"></div>
+      </div>
+    </section>
+  </div>
+  
+</div></main>
+  <footer class="border-t border-white/5 bg-white/[2%] py-10 mt-20">
+  <div class="container space-y-6 flex flex-col">
+    <div class="grid gap-8 md:grid-cols-[2fr_3fr]">
+      <div class="space-y-4">
+        <a href="" class="flex items-center gap-2">
+          <img src="e79ff215-ebd9-40e6-bccf-ebbd99c7e4b5.png" alt="" class="w-10 h-10 object-cover rounded-md">
+          <span class="font-semibold">Origins shope</span>
+        </a>
+        <p class="text-muted-foreground max-w-md">A Origins shope é a melhor loja de produtos digitais com os melhores preços e maior variedade.</p>
+      </div>
+      <nav class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div class="space-y-2">
+          <h6 class="text-muted-foreground font-semibold">Categorias</h6>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="destaque">Destaque</a></li>
+            <li><a href="assinaturas">Assinaturas</a></li>
+            <li><a href="outros">Outros</a></li>
+          </ul>
+        </div>
+        <div class="space-y-2">
+          <h6 class="text-muted-foreground font-semibold">Legal</h6>
+          <ul class="space-y-2 text-sm text-muted-foreground">
+            <li><a href="">Privacidade</a></li>
+            <li><a href="">Termos</a></li>
+            <li><a href="">Contato</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <p class="text-center text-muted-foreground text-xs mt-10">© 2024 Origins shope. Todos os direitos reservados.</p>
+  </div>
+</footer>
+  <script src="js/app.js"></script>
+</body>
+
+</html>"""
+
+# Substituindo Legas Store por Origins shope
+html_editado = html_original.replace("Legas Store", "Origins shope")
+
+# Salvando arquivo
+caminho_arquivo = "/mnt/data/origins_shope.html"
+with open(caminho_arquivo, "w", encoding="utf-8") as f:
+    f.write(html_editado)
+
+caminho_arquivo
